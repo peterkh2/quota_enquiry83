@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 
 app.post('/insert', function(req, res) {
 //     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
-//         // watch for any connect issues
 //         if (err) console.log(err);
 //         conn.query(
 //             'INSERT INTO salesforce.Ruby_Survey__c (Full_Name__c, Position__c, Rating__c, Learnt_1__c, Learnt_2__c, Learnt_3__c, Suggestion_1__c, Suggestion_2__c, Suggestion_3__c) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
