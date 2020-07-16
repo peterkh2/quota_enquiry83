@@ -1,49 +1,62 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
+var fs = require('fs');
 var app = express();
 
 app.set('port', process.env.PORT || 5000);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-app.post('/insert', function(req, res) {
-//     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
-//         if (err) console.log(err);
-//         conn.query(
-//             'INSERT INTO salesforce.Ruby_Survey__c (Full_Name__c, Position__c, Rating__c, Learnt_1__c, Learnt_2__c, Learnt_3__c, Suggestion_1__c, Suggestion_2__c, Suggestion_3__c) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
-//             [req.body.name.trim(), req.body.position.trim(), req.body.rating.trim(), req.body.learnt1.trim(), req.body.learnt2.trim(), req.body.learnt3.trim(), req.body.suggest1.trim(), req.body.suggest2.trim(), req.body.suggest3.trim()],
-//             function(err, result) {
-//                 done();
-//                 if (err) {
-//                     res.status(400).json({error: err.message});
-//                 }
-//                 else {
-//                     res.json(result);
-//                 }
-//             }
-//         );
-//     });
-});
-
-app.get('/all-servey', function(req, res) {
+// Original API
+app.get('/api-endpoint', function(request, response) {
+    var nameString = request.query.name;
+    var historyString = request.query.history;
     
-//     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
-//         if (err) console.log(err);
-//         conn.query(
-//             'SELECT * FROM salesforce.Ruby_Survey__c ORDER BY CreatedDate DESC',
-//             function(err, result) {
-//                 done();
-//                 if (err) {
-//                     res.status(400).json({error: err.message});
-//                 }
-//                 else {
-//                     //res.json(result);
-//                     res.send(res.json(result));
-//                 }
-//             }
-//         );
-//     });
+    var jsonContent = 
+          [
+            {
+                quoteId: '2198372-0',
+                issueDateTime: '03/05/2020 12:36',
+                issuedBy: 'Ricky So - 01702893',
+                price: '3790',
+                expiryDate: '10/05/2020',
+                channel: 'Retail - MKK',
+                service: [
+                    {
+                        servicePlan: '$198 4G 21Mbps 5GB Service Plan',
+                        mobileData: '5GB (4G 21Mbps, thereafter capped at 128kbps)',
+                        commitmentPeriod: '24 months',
+                    }
+                ],
+                options: 
+                    [
+                        {
+                            name: 'PlayStation 4 "Just Dance 2020"'
+                        },
+                        {
+                            name: 'Liquidnano Mobile Steri-Wipe premium offer (4 packs) (1 pc)'
+                        },
+                        {
+                            name: 'The Club 1000 Clubpoints (Online Offer)'
+                        },
+                        {
+                            name: '"86-Easy" service', 
+                            price: '18/mo'
+                        },
+                        {
+                            name: 'Mainland China Roaming Data', 
+                            price: '49/mo'
+                        }
+                    ],
+            }
+        ]
+      ;
+    
+    var outputResult = jsonContent;
+    
+    response.setHeader('Access-Control-Allow-Origin','*');
+    response.send(JSON.parse(JSON.stringify(outputResult)));
     
 });
 
