@@ -19,7 +19,7 @@ app.get('/api-endpoint', function(request, response) {
                 quoteId: '2198372-0',
                 issueDateTime: '03/05/2020 12:36',
                 issuedBy: 'Ricky So - 01702893',
-                price: '3790',
+                price: '3,790',
                 expiryDate: '10/05/2020',
                 channel: 'Retail - MKK',
                 service: [
