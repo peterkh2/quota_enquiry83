@@ -130,7 +130,7 @@ app.get('/api-endpoint', function(request, response) {
       ;
     
     let outputResult = jsonContent;
-    const limit = request.query.limit;
+    // const limit = request.query.limit;
     // if(limit && limit <= jsonContent.length){
         // outputResult = outputResult.slice(0, limit);
     // }
