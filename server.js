@@ -129,8 +129,8 @@ app.get('/api-endpoint', function(request, response) {
         ]
       ;
     
-    let outputResult = jsonContent;
-    // const limit = request.query.limit;
+    var outputResult = jsonContent;
+    const limit = request.query.limit;
     // if(limit && limit <= jsonContent.length){
         // outputResult = outputResult.slice(0, limit);
     // }
