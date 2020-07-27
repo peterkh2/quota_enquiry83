@@ -25,7 +25,9 @@ app.get('/api-endpoint', function(request, response) {
                 service: [
                     {
                         servicePlan: '$198 4G 21Mbps 5GB Service Plan',
+                        servicePlanCount: 1,
                         mobileData: '5GB (4G 21Mbps, thereafter capped at 128kbps)',
+                        mobileDataCount: 1,
                         commitmentPeriod: '24 months',
                     }
                 ],
@@ -60,7 +62,9 @@ app.get('/api-endpoint', function(request, response) {
                 service: [
                     {
                         servicePlan: '$198 4G 21Mbps 5GB Service Plan',
+                        servicePlanCount: 1,
                         mobileData: '5GB (4G 21Mbps, thereafter capped at 128kbps)',
+                        mobileDataCount: 1,
                         commitmentPeriod: '24 months',
                     }
                 ],
@@ -95,7 +99,9 @@ app.get('/api-endpoint', function(request, response) {
                 service: [
                     {
                         servicePlan: '$198 4G 21Mbps 5GB Service Plan',
+                        servicePlanCount: 1,
                         mobileData: '5GB (4G 21Mbps, thereafter capped at 128kbps)',
+                        mobileDataCount: 1,
                         commitmentPeriod: '24 months',
                     }
                 ],
