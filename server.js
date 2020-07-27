@@ -131,9 +131,9 @@ app.get('/api-endpoint', function(request, response) {
     
     let outputResult = jsonContent;
     const limit = request.query.limit;
-    if(limit && limit <= jsonContent.length){
+    // if(limit && limit <= jsonContent.length){
         // outputResult = outputResult.slice(0, limit);
-    }
+    // }
     
     response.setHeader('Access-Control-Allow-Origin','*');
     response.send(JSON.parse(JSON.stringify(outputResult)));
